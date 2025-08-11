@@ -85,7 +85,9 @@ public class BuyProductByNameTestCase extends BasePage {
         sortedByPhoneNamePage.sortByCheap.click();
 
         LOGGER.info("Sorting items by the cheapest products");
+        //stringExpectedTitle = sortedByPhoneNamePage.expectedCharger.getAttribute("title");
         stringExpectedTitle = sortedByPhoneNamePage.expectedCharger.getAttribute("title");
+
         LOGGER.debug("Expected product title" + stringExpectedTitle);
 
         explicitWait.until(ExpectedConditions.urlToBe(sortedByPhoneNamePage.sortedByChargerPhonePageUrl));
@@ -107,8 +109,8 @@ public class BuyProductByNameTestCase extends BasePage {
 
         LOGGER.info("Verify was successful");
 
-        cartPage.deleteProduct2.click();
-        Thread.sleep(1000);
-        cartPage.deleteProduct1.click();
+        cartPage.getDeleteButton(2).click();
+        explicitWait.until(ExpectedConditions.elementToBeClickable(cartPage.getDeleteButton(1)));
+        cartPage.getDeleteButton(1).click();
     }
 }

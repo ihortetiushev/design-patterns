@@ -23,12 +23,11 @@ public class SortedByPhoneNamePage extends PageFactory {
     public WebElement searchBar;
     @FindBy(how = How.XPATH, using = "//*[@id='product-buy-button']")
     public WebElement buyButton;
-    @FindBy(how = How.XPATH, using = "//*[contains(@class, 'product-card__content')]//a[@href='https://allo.ua/ua/products/mobile/smartfon-google-pixel-9-pro-fold-16-512gb-obsidian-eu-usa-global-version-ga05799-us-ga05799-us-51638.html' and @title]")
-
+    @FindBy(how = How.XPATH, using = "//*[contains(@class, 'product-card__content')]//a[@href='https://allo.ua/ua/products/mobile/smartfon-google-pixel-9-pro-fold-16-512gb-obsidian-eu-usa-global-version-ga05799-us-51638.html' and @title]")
     public WebElement expectedPhone;
-    @FindBy(how = How.XPATH, using = "//*[contains(@class, 'product-card__content')]//*[@title='Зарядний пристрій Google Pixel Charger 30W']")
+    @FindBy(how = How.XPATH, using = "//*[contains(@class, 'product-card__content')]//*[@title='Зарядний пристрій Pixel 30W USB-C Power Charger (GA03502-EU) білий (39798)']")
     public WebElement expectedCharger;
-    @FindBy(how = How.XPATH, using = "//*[contains(@class, 'product-card__content')]//*[@title='Зарядний пристрій Google Pixel Charger 30W']")
+    @FindBy(how = How.XPATH, using = "//*[@class='text']//span[contains(text(),'Зарядний пристрій Pixel 30W USB-C Power Charger')]")
     public WebElement actualCharger;
     public String sortedByPhoneNamePageUrl = "https://allo.ua/ua/catalogsearch/result/index/cat-48/?q=pixel%209%20pro";
     public String sortedByChargerPhonePageUrl = "https://allo.ua/ua/catalogsearch/result/index/dir-asc/order-price/?q=Pixel%2030W%20charger";
@@ -40,10 +39,10 @@ public class SortedByPhoneNamePage extends PageFactory {
     public String actualTitlePhoneXpath ="//a[@href='https://allo.ua/ua/products/mobile/" +
             "smartfon-google-pixel-9-pro-fold-16-512gb-obsidian-eu-usa-global-version-ga05799-us-51638.html']//*[@class='wrap']";
     public String actualTitleChargerXpath = "//a[@target='_self' and @href='https://allo.ua/ua/zarjadnye-ustrojstva/zarjadnoe-ustrojstvo-google-pixel-charger-30w.html']//*[@class='wrap']";
-    @FindBy(how = How.XPATH, using = "//a[@href='https://allo.ua/ua/products/mobile/smartfon-google-pixel-9-pro-fold-16-512gb-obsidian-eu-usa-global-version-ga05799-us-ga05799-us-51638.html']//*[@class='wrap']")
+    @FindBy(how = How.XPATH, using = "//a[@href='https://allo.ua/ua/products/mobile/smartfon-google-pixel-9-pro-fold-16-512gb-obsidian-eu-usa-global-version-ga05799-us-51638.html']//*[@class='wrap']")
     public WebElement actualPhone;
     public String catalogProduct = "//div[contains(@class, 'v-catalog__products')]";
-    @FindBy(how = How.XPATH, using = "//a[@target='_self' and @href='https://allo.ua/ua/zarjadnye-ustrojstva/zarjadnoe-ustrojstvo-google-pixel-charger-30w.html']//*[@class='wrap']")
+    @FindBy(how = How.XPATH, using = "//a[@target='_self' and @href='https://allo.ua/ua/zarjadnye-ustrojstva/zarjadnoe-ustrojstvo-google-pixel-30w-usb-c-power-charger-ga03502-eu-beloe.html']//*[@class='wrap']")
     public WebElement actualTitleCharger;
     public String buyButtonXpath = "//*[@id='product-buy-button']";
 
