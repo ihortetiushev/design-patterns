@@ -70,7 +70,6 @@ public class BuyTheMostPopularLaptopTestCase extends BasePage {
                 .isEqualTo(stringExpectedTitle);
 
         cartPage.addQuantity.click();
-        //getDriver().findElement(By.xpath("//*[name()='svg'][contains(@class, 'vi') and contains(@class, 'plus')]")).click();
         cartPage.addQuantity.click();
         LOGGER.info("Verify was successful");
 
