@@ -25,14 +25,6 @@ public class CartPage extends PageFactory {
     @FindBy(how = How.XPATH, using = "(//*[@class='products__container']//*[@class='product-item__wrap']//*[@class='vi i-shared vi__close remove'])[2]")
     public WebElement deleteProduct2;
 
-    /*public WebElement getDeleteButton(int index) {
-        String xpath = String.format(
-                "(//*[@class='products__container']//*[@class='product-item__wrap']//*[@class='vi i-shared vi__close remove'])[%d]",
-                index
-        );
-        return getDriver().findElement(By.xpath(xpath));
-    }*/
-
     public void deleteProductByIndex(int index) {
         WebElement deleteButton = getDriver().findElement(By.xpath(
                 "(//*[@class='products__container']//*[@class='product-item__wrap']//*[@class='vi i-shared vi__close remove'])[" + index + "]"));
@@ -42,6 +34,4 @@ public class CartPage extends PageFactory {
     public CartPage(WebDriver driver) {
         initElements(driver, this);
     }
-
-
 }
