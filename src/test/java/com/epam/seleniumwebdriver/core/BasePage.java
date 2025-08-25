@@ -12,8 +12,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
+import static com.epam.seleniumwebdriver.drivermanager.DriverManager.closeDriver;
 import static com.epam.seleniumwebdriver.drivermanager.DriverManager.getDriver;
 
 public class BasePage extends PageFactory {
@@ -60,11 +62,11 @@ public class BasePage extends PageFactory {
         }
     }
 
-    /*@AfterSuite(alwaysRun = true)
+    @AfterSuite(alwaysRun = true)
     public void driverCloser() {
         closeDriver();
         LOGGER.debug("Driver closed");
-    }*/
+    }
 
     public void selectLocation(String location) {
         locationButton.click();

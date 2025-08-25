@@ -108,7 +108,7 @@ public class BuyProductByNameTestCase extends BasePage {
 
         LOGGER.info("Verify was successful");
         cartPage.deleteProduct2.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         cartPage.deleteProduct1.click();
     }
 }
