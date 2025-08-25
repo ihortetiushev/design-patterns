@@ -1,10 +1,13 @@
 package com.epam.seleniumwebdriver.core;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import static com.epam.seleniumwebdriver.drivermanager.DriverManager.getDriver;
 
 public class CartPage extends PageFactory {
 
@@ -21,7 +24,24 @@ public class CartPage extends PageFactory {
     public WebElement deleteProduct1;
     @FindBy(how = How.XPATH, using = "(//*[@class='products__container']//*[@class='product-item__wrap']//*[@class='vi i-shared vi__close remove'])[2]")
     public WebElement deleteProduct2;
+
+    /*public WebElement getDeleteButton(int index) {
+        String xpath = String.format(
+                "(//*[@class='products__container']//*[@class='product-item__wrap']//*[@class='vi i-shared vi__close remove'])[%d]",
+                index
+        );
+        return getDriver().findElement(By.xpath(xpath));
+    }*/
+
+    public void deleteProductByIndex(int index) {
+        WebElement deleteButton = getDriver().findElement(By.xpath(
+                "(//*[@class='products__container']//*[@class='product-item__wrap']//*[@class='vi i-shared vi__close remove'])[" + index + "]"));
+        deleteButton.click();
+    }
+
     public CartPage(WebDriver driver) {
         initElements(driver, this);
     }
+
+
 }

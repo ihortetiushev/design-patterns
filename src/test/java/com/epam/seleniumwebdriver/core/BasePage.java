@@ -35,15 +35,16 @@ public class BasePage extends PageFactory {
         initElements(getDriver(), this);
     }
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void setBrowserPage() {
         LOGGER.info("Creating WebDriver");
         WebDriver driver = getDriver();
-        driver.get(ConfigReader.get("base.url"));
+        //driver.get(ConfigReader.get("base.url"));
+        driver.get("https://allo.ua");
         LOGGER.debug("Get a URl " + ConfigReader.get("base.url"));
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void takeScreenshotIfFailed(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {
             WebDriver driver = getDriver();
@@ -61,7 +62,7 @@ public class BasePage extends PageFactory {
         }
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void driverCloser() {
         closeDriver();
         LOGGER.debug("Driver closed");
